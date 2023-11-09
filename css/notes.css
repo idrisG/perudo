@@ -1,0 +1,99 @@
+/**
+* Feuille de style pour la gestion des bulletins
+*/
+
+/* Authentification */
+/*.auth {	
+	margin: 0 auto;
+	margin-top: 100px;	
+	border-radius: 4px;	
+	border: solid 1px #ddd;
+	width: 300px;
+	padding: 20px;
+}
+
+label {
+	font-weight: 700;
+	margin-right: 10px;
+	width: 100px;	
+	display: inline-block;
+}
+.error {
+	background-color: #fdf7f7;	
+	padding: 5px;
+	border-left: 3px solid #d9534f;	
+}
+
+.error h3 {
+	color: #d9534f;
+	margin-top: 0px;
+}
+
+.auth h2 {
+	margin: 0px;
+	padding-top: 0px;
+}
+*/
+/* Bouton de deconnexion */
+/*.logout {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	width: 32px;
+}*/
+
+/* Bulletin de notes */
+.bulletin {
+	font-size: 12pt;	
+	width: 400px;	
+	border-collapse: collapse;
+	border-spacing: 0px;
+	text-transform: capitalize;
+	margin: 0 auto;
+}
+
+.bulletin h2 {
+	text-align: center;
+}
+
+.bulletin th {
+	font-size: 14pt;
+	padding: 2px 5px 2px 5px;
+}
+
+.bulletin thead {
+	background-color: #000;	
+	color: #eee;
+}
+
+.bulletin .matiere {
+	background-color: #eee;		
+}
+
+.bulletin .note {
+	text-align: center;
+}
+
+.bulletin .general {
+	font-size: 20pt;
+}
+
+.logo {
+	width: 100%;
+}
+
+.panel-bulletin {
+	margin-top: 3em;
+}
+
+#refus {
+	visibility: hidden;
+}
+
+#refus:target {
+	visibility: visible;
+}
+
+.btn-close {
+	margin-top: 1em;
+}

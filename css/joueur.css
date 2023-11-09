@@ -1,0 +1,37 @@
+.liste_joueurs{
+   background-color: #BBB;
+   float: left; /* Le menu flottera à gauche */
+   width: auto;
+   height:100%;
+   padding: 0;
+   margin:0;
+}
+ol {
+  float : left;
+  list-style-type: none;
+  font-size: 1em; 
+  width:100%;
+  padding: 0;
+}
+
+ol li {
+  color:black;
+  background-color: orange; 
+  text-align: left;
+  margin: 0;
+  padding-left: 20%;
+  text-decoration: none;
+  display:block;
+  border: 1px solid white;
+}
+#action{
+   background-color: #BBB;
+   float: left; /* Le menu flottera à gauche */
+   width: auto;
+   height:100%;
+   padding: 0;
+   margin:0;
+   display: block;
+   border: 1px solid white;
+
+}

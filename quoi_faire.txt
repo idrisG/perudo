@@ -1,0 +1,13 @@
+LES FONCTIONS :
+	-utilisateur peut faire :
+			-parier
+			-surencherir
+			-traiter de menteur (dudo)
+	-client :
+			-affiche le jeu (la page internet)
+	-serveur :
+			-pour chaque joueur un lancé de dés pour savoir qui commence
+			-Lance 5 dés par joueur (tirage de 5 chiffre entre 1 et 6 aleatoirement)
+
+
+
