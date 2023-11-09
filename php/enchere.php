@@ -1,6 +1,6 @@
 <?php
 	function initialiseEnchere(){
-		$xml=simplexml_load_file("php/enchere.xml");
+		$xml=simplexml_load_file("./php/enchere.xml");
 		if ($xml->derniereEnchere==null) {
 			$u=$xml->addChild("derniereEnchere",0);
 		}
@@ -12,20 +12,20 @@
 			$u->addChild("nbr",0);
 		}
 		else{$xml->derniereEnchere->nbr=0;}
-		if(!$xml->asXML('php/enchere.xml')){
+		if(!$xml->asXML('./php/enchere.xml')){
 			echo "impossible de sauvegarder le fichier";
 		}
 	}
 	function reinitialiseEnchere(){
-		$xml=simplexml_load_file("php/enchere.xml");
+		$xml=simplexml_load_file("./php/enchere.xml");
 		$xml->derniereEnchere->d=0;
 		$xml->derniereEnchere->nbr=0;
-		if(!$xml->asXML('php/enchere.xml')){
+		if(!$xml->asXML('./php/enchere.xml')){
 			echo "impossible de sauvegarder le fichier";
 		}
 	}
 	function encherePossible($nbDes){
-		$xml=simplexml_load_file("php/enchere.xml");
+		$xml=simplexml_load_file("./php/enchere.xml");
 		echo "<ul id='menu'>";
 		if (intval($xml->derniereEnchere->d==1)) {
 			for ($i=1; $i <=6 ; $i++) { 

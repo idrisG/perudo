@@ -1,5 +1,5 @@
 <?php
-	$xml=simplexml_load_file("php/joueur_xml.xml");
+	$xml=simplexml_load_file("./php/joueur_xml.xml");
 	isSpectateur();
 	$nbJoueurs=compterJoueur($xml);
 	afficherDes($xml);

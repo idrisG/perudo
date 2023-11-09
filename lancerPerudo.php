@@ -14,7 +14,7 @@
 <div class="container">
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.0/jquery.min.js"></script>
 <script type="text/javascript">
-function autoRefresh_div(){ $("#Jeu").load("LP.php");} setInterval('autoRefresh_div()', 3500);
+function autoRefresh_div(){ $("#Jeu").load("./LP.php");} setInterval('autoRefresh_div()', 3500);
 </script>
 <!--<button class="btn btn-primary btn-lg" onclick="postE();">Enchere</button>-->
 <div id="Jeu">

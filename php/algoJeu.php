@@ -4,50 +4,50 @@ ini_set('display_errors', 1);
 error_reporting(-1);
 
 /*	function initialiseTour(){
-		$xmlTour=simplexml_load_file('php/tour.xml');
+		$xmlTour=simplexml_load_file('./php/tour.xml');
 		$u=$xmlTour->addchild("tour",0);
-		if (!$xmlTour->asXML('php/tour.xml')) {
+		if (!$xmlTour->asXML('./php/tour.xml')) {
 			echo "impossible de sauvegarder";
 		}
 	}*/
 	function reinitialiseTour(){
-		$xmlTour=simplexml_load_file('php/tour.xml');
+		$xmlTour=simplexml_load_file('./php/tour.xml');
 		if($xmlTour->tour==null){
 			$u=$xmlTour->addchild("tour",0);
 		}
 		$xmlTour->tour=0;
 		$xmlTour->action="";
-		if (!$xmlTour->asXML('php/tour.xml')) {
+		if (!$xmlTour->asXML('./php/tour.xml')) {
 			echo "impossible de sauvegarder";
 		}
 	}
 	function tourSuivant($nbJoueurs){
-		$xmlTour=simplexml_load_file('php/tour.xml');
+		$xmlTour=simplexml_load_file('./php/tour.xml');
 		if($xmlTour->tour==$nbJoueurs-1){
 			$xmlTour->tour=0;
 		}
 		else{$xmlTour->tour=intval($xmlTour->tour)+1;}
-		if (!$xmlTour->asXML('php/tour.xml')) {
+		if (!$xmlTour->asXML('./php/tour.xml')) {
 			echo "impossible de sauvegarder";
 		}
 	}
 	function donneTourActuel(){
-		$xmlTour=simplexml_load_file('php/tour.xml');
+		$xmlTour=simplexml_load_file('./php/tour.xml');
 		return intval($xmlTour->tour);
 	}
 	function action($act){
-		$xmlTour=simplexml_load_file('php/tour.xml');
+		$xmlTour=simplexml_load_file('./php/tour.xml');
 		$xmlTour->action=$act;
-		if (!$xmlTour->asXML('php/tour.xml')) {
+		if (!$xmlTour->asXML('./php/tour.xml')) {
 			echo "impossible de sauvegarder";
 		}
 	}
 	function afficheAction(){
-		$xmlTour=simplexml_load_file('php/tour.xml');
+		$xmlTour=simplexml_load_file('./php/tour.xml');
 		echo $xmlTour->action;
 	}
 	function donneTourPrecedent($nbJoueurs){
-		$xmlTour=simplexml_load_file('php/tour.xml');
+		$xmlTour=simplexml_load_file('./php/tour.xml');
 		if(intval($xmlTour->tour)==0){
 			return intval($nbJoueurs-1);
 		}
@@ -79,17 +79,17 @@ error_reporting(-1);
 		return $c;
 	}
 	function enchere($xml,$val,$nbr){
-		$xmlEnchere=simplexml_load_file("php/enchere.xml");
+		$xmlEnchere=simplexml_load_file("./php/enchere.xml");
 		$xmlEnchere->derniereEnchere->d=$val;
 		$xmlEnchere->derniereEnchere->nbr=$nbr;
-		if(!$xmlEnchere->asXML('php/enchere.xml')){
+		if(!$xmlEnchere->asXML('./php/enchere.xml')){
 			echo "impossible de sauvegarder le fichier";
 		}
 	}
 	function isMenteur($xml,$nbJoueurs){
 		$tourActu=donneTourActuel();
 		$tourPrec=donneTourPrecedent($nbJoueurs);
-		$xmlEnchere=simplexml_load_file("php/enchere.xml");
+		$xmlEnchere=simplexml_load_file("./php/enchere.xml");
 		$de=$xmlEnchere->derniereEnchere->d;
 		$dernierEnch=intval($xmlEnchere->derniereEnchere->nbr);
 		$enchMax=compteDes($xml,$de);
@@ -97,7 +97,7 @@ error_reporting(-1);
 			if (intval($j->pseudo["ordre"])==$tourPrec){
 				if(intval($enchMax)<$dernierEnch){
 					$j->menteur=1;
-					if(!$xml->asXML('php/joueur_xml.xml')){
+					if(!$xml->asXML('./php/joueur_xml.xml')){
 						echo "impossible de sauvegarder le fichier";
 					}
 					return true;
@@ -106,7 +106,7 @@ error_reporting(-1);
 			if (intval($j->pseudo["ordre"])==$tourActu){
 				if(intval($enchMax)>=$dernierEnch){
 					$j->menteur=1;
-					if(!$xml->asXML('php/joueur_xml.xml')){
+					if(!$xml->asXML('./php/joueur_xml.xml')){
 						echo "impossible de sauvegarder le fichier";
 					}
 					return false;
@@ -121,7 +121,7 @@ error_reporting(-1);
 				$j->spectateur=1;
 			}
 		}
-		if(!$xml->asXML('php/joueur_xml.xml')){
+		if(!$xml->asXML('./php/joueur_xml.xml')){
 			echo "impossible de sauvegarder le fichier";
 		}
 	}
@@ -146,12 +146,12 @@ error_reporting(-1);
 	}
 	function finJeu(){
 		$docJoueur = new DOMDocument();
-		$docJoueur -> load('php/joueur_xml.xml');
+		$docJoueur -> load('./php/joueur_xml.xml');
 		$jeux = $docJoueur->documentElement;
 		$j = $jeux->getElementsByTagName("Identification");
 		while ($jeux->hasChildNodes()) {
 			$jeux->removeChild($jeux->firstChild);
 		}
-		$docJoueur->save("php/joueur_xml.xml");
+		$docJoueur->save("./php/joueur_xml.xml");
 	}
 ?>

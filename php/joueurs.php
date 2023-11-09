@@ -3,7 +3,7 @@
 		if(isset($_POST["pseudo"])){
 			$pseudo = $_POST["pseudo"];
 			if($pseudo!=""){
-				$xml=simplexml_load_file('php/joueur_xml.xml');
+				$xml=simplexml_load_file('./php/joueur_xml.xml');
 				$nbJoueurs=0;
 				foreach ($xml->joueur as $j) {
 					$nbJoueurs=$nbJoueurs+1;
@@ -20,10 +20,10 @@
 				$u->addChild("nbrDes",5);
 				$u->addChild("spectateur",0);
 				$u->addChild("menteur",0);
-				if(!$xml->asXML('php/joueur_xml.xml')){
+				if(!$xml->asXML('./php/joueur_xml.xml')){
 					echo "impossible de sauvegarder le fichier";
 				}
-				$xml->saveXML('php/joueur_xml.xml');
+				$xml->saveXML('./php/joueur_xml.xml');
 				return true;
 			}
 		}
@@ -36,7 +36,7 @@
 			echo '<li id="'.$j->pseudo['ordre'].'">'.$j->pseudo.' : '.$j->nbrDes.' des </li>';			
 		}
 		echo '</ol>';
-		if(!$xml->asXML('php/joueur_xml.xml')){
+		if(!$xml->asXML('./php/joueur_xml.xml')){
 			echo "impossible de sauvegarder le fichier";
 		}
 	}
@@ -47,7 +47,7 @@
 			echo '<li id="'.$j->pseudo['ordre'].'">'.$j->pseudo.' : '.$j->nbrDes.' des </li>';			
 		}
 		echo '</ol>';
-		if(!$xml->asXML('php/joueur_xml.xml')){
+		if(!$xml->asXML('./php/joueur_xml.xml')){
 			echo "impossible de sauvegarder le fichier";
 		}
 	}
@@ -82,7 +82,7 @@
 				else{$j->pseudo["ordre"]-=$tempPremier;}
 			}
 		}
-		if(!$xml->asXML("php/joueur_xml.xml")){
+		if(!$xml->asXML("./php/joueur_xml.xml")){
 			echo "impossible de sauvegarder";
 		}
 	}
@@ -92,7 +92,7 @@
 			$j->pseudo["ordre"]=$i;
 			$i++;
 		}
-		if(!$xml->asXML('php/joueur_xml.xml')){
+		if(!$xml->asXML('./php/joueur_xml.xml')){
 			echo "impossible de sauvegarder le fichier";
 		}
 	}

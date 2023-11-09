@@ -11,8 +11,8 @@
 <body>
 <div class="container">
 <?php
-	require_once('php/joueurs.php');
-	$xml=simplexml_load_file("php/joueur_xml.xml");
+	require_once('./php/joueurs.php');
+	$xml=simplexml_load_file("./php/joueur_xml.xml");
 	echo "le gagnant est : ".afficheGagnant($xml);
 ?>
 <form class="form-horizontal" action="transition.php">

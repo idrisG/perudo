@@ -15,14 +15,14 @@
 function autoRefresh_div(){ $(".des").load("pe.php");} setInterval('autoRefresh_div()', 1000);
 </script>
 <?php
-require_once("php/joueurs.php");
-require_once("php/algoJeu.php");
+require_once("./php/joueurs.php");
+require_once("./php/algoJeu.php");
 if(!addJoueurs()){
   echo '<div class="row">';
   echo '<div id="notification" class="col-md-offset-3 col-md-6 alert alert-dismissible alert-danger text-center has-error">ce pseudo est deja utilise</div>';
   echo '</div>';
 	echo '<form class="form-horizontal" method="post" action="perudo.php">';
-	$xml=simplexml_load_file("php/joueur_xml.xml");
+	$xml=simplexml_load_file("./php/joueur_xml.xml");
   echo "<div class=liste_joueurs";
 	afficherJoueurs($xml);
   echo "</div>";
@@ -44,7 +44,7 @@ else{
   echo "</div>";  
   echo "<div class='des'>";
   echo "</div>";
-  $xml=simplexml_load_file("php/joueur_xml.xml");  
+  $xml=simplexml_load_file("./php/joueur_xml.xml");  
 }
 isSpectateur($xml);
 $nbJoueurs=compterJoueur($xml);

@@ -5,7 +5,7 @@
 				$j->nbrDes["de".$i]=rand(1,6);
 			}		
 		}
-		if(!$xml->asXML("php/joueur_xml.xml")){
+		if(!$xml->asXML("./php/joueur_xml.xml")){
 			echo "impossible de sauvegarder";
 		}
 	}

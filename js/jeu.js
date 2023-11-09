@@ -6,7 +6,7 @@ function postD(){
 			}
 		}
 	}
-	xhr.open("GET","LP.php?enchere=0&dudo=1", true);
+	xhr.open("GET","./LP.php?enchere=0&dudo=1", true);
 	xhr.send(null);
 }
 /*function postE(){
@@ -28,7 +28,7 @@ function enchere(val,nbr){
 			}
 		}
 	}
-	xhr.open("GET","LP.php?val="+val+"&nbr="+nbr, true);
+	xhr.open("GET","./LP.php?val="+val+"&nbr="+nbr, true);
 	xhr.send(null);
 }
 /*function refreshAction(val,nbr){
