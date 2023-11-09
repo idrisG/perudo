@@ -16,7 +16,7 @@
 	echo "	<link type=\"text/css\" rel=\"stylesheet\" href=\"css/bootstrap.min.css\"/>\n";
 	echo "</head>\n";
 	echo '<body background="image/rio.jpg">';
-	echo "<div class=\"container\">\n";
+	echo "<div class=\"containe\">\n";
 	echo '<button type="submit" class="btn btn-primary btn-lg">Dudo</button>';
 	echo '<button type="submit" class="btn btn-primary btn-lg" onclick="return actualisePseudo($joueur_actuel)">Changer joueur</button>';
 	echo '<p id="joueur">pseudo</p>';

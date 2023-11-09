@@ -9,7 +9,7 @@
   <link type="text/css" rel="stylesheet" href="css/joueur.css"/>
 </head>
 <body onload='des()'>
-<div class="container">
+<div class="containe">
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.0/jquery.min.js"></script>
 <script type="text/javascript">
 function autoRefresh_div(){ $(".des").load("pe.php");} setInterval('autoRefresh_div()', 1000);
@@ -33,7 +33,7 @@ if(!addJoueurs()){
   echo    '</div>';
   echo  '</div>';
   echo '<div class="form-group">';
-  echo    '<div class="pull-right">';
+  echo    '<div class="pull-righ">';
   echo      '<button type="submit" class="btn btn-primary btn-lg">jouer</button>';
   echo      '<button type="reset" class="btn btn-default btn-lg">Annuler</button>';
   echo    '</div>';

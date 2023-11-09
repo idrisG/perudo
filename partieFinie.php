@@ -9,7 +9,7 @@
 	<link type="text/css" rel="stylesheet" href="css/joueur.css"/>
 </head>
 <body>
-<div class="container">
+<div class="containe">
 <?php
 	require_once('./php/joueurs.php');
 	$xml=simplexml_load_file("./php/joueur_xml.xml");

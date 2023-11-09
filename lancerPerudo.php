@@ -11,7 +11,7 @@
 	<link type="text/css" rel="stylesheet" href="css/joueur.css"/>
 </head>
 <body background="image/rio.jpg">
-<div class="container">
+<div class="containe">
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.0/jquery.min.js"></script>
 <script type="text/javascript">
 function autoRefresh_div(){ $("#Jeu").load("./LP.php");} setInterval('autoRefresh_div()', 3500);
