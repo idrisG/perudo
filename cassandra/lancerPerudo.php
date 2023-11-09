@@ -30,7 +30,7 @@
 	$xml=simplexml_load_file("php/joueur_xml.xml");
 	lancerDes($xml);
 	$nbJoueurs=compterJoueur($xml);
-	print_r(compterNbreDes($xml));
+	// print_r(compterNbreDes($xml));
 	echo '</br>';
 	echo "le premier joueur est : ";ordreJoueur($xml,$nbJoueurs);
 	echo '</br>';

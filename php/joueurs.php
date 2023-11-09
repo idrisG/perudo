@@ -3,7 +3,7 @@
 		if(isset($_POST["pseudo"])){
 			$pseudo = $_POST["pseudo"];
 			if($pseudo!=""){
-				$xml=simplexml_load_file('./php/joueur_xml.xml');
+				$xml=simplexml_load_file('php/joueur_xml.xml');
 				$nbJoueurs=0;
 				foreach ($xml->joueur as $j) {
 					$nbJoueurs=$nbJoueurs+1;
@@ -15,7 +15,7 @@
 					}
 				}
 				$u=$xml->addChild('joueur',$_SERVER['REMOTE_ADDR']);
-				$xml->joueur->addChild("pseudo",$pseudo);
+				$u->addChild("pseudo",$pseudo);
 				$u->pseudo["ordre"]=$nbJoueurs;
 				$u->addChild("nbrDes",5);
 				$u->addChild("spectateur",0);

@@ -2,14 +2,14 @@
 	function initialiseEnchere(){
 		$xml=simplexml_load_file("./php/enchere.xml");
 		if ($xml->derniereEnchere==null) {
-			$u=$xml->addChild("derniereEnchere",0);
+			$xml->addChild("derniereEnchere",0);
 		}
 		if ($xml->derniereEnchere->d==null) {
-			$u->addChild("d",0);
+			$xml->derniereEnchere->addChild("d",0);
 		}
 		else{$xml->derniereEnchere->d=0;}
 		if ($xml->derniereEnchere->nbr==null) {
-			$u->addChild("nbr",0);
+			$xml->derniereEnchere->addChild("nbr",0);
 		}
 		else{$xml->derniereEnchere->nbr=0;}
 		if(!$xml->asXML('./php/enchere.xml')){
