@@ -9,7 +9,7 @@
 	<link type="text/css" rel="stylesheet" href="css/joueur.css"/>
 </head>
 <body background="image/rio.jpg">
-<div class="containe">
+<div class="container">
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.0/jquery.min.js"></script>
 <script type="text/javascript">
 function autoRefresh_div(){ $(".liste_joueurs").load("./id.php");} setInterval('autoRefresh_div()', 1000);
